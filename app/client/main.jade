@@ -21,14 +21,11 @@ template(name="layout")
 	//- +footer
 
 template(name="home")
-	article.message.is-info
-		.message-header Note to Ari about Data Visualization
-		.message-body Here's a visualization example with d3.js that seems like it incorporates a lot of what you were talking about implementing visually: <a href="http://visualdataweb.de/webvowl/#">http://visualdataweb.de/webvowl/#</a>. It's a pretty complex example but inspiring!
-	//- .hidden.divider
 	h1.title Challenges
 		a.button.is-pulled-right#add-challenge + Identify New Challenge
 	each challenges
 		+challengeTile
+	+visualization
 		
 template(name="challengeTile")
 	.card

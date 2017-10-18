@@ -36,4 +36,4 @@ Template.challengeDetail.helpers({
 		var challengeId = FlowRouter.getParam('id');
 		return Challenges.findOne(challengeId);
 	}
-})
+});
