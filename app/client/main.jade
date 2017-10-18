@@ -1,0 +1,52 @@
+head
+	title Linked Arms
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css")
+
+//- body
+//- 	h1 Linked Arms
+//- 	//- +loginButtons
+
+template(name="header")
+	nav.navbar.is-primary
+		.navbar-brand
+			a.navbar-item(href="/") Linked Arms
+			.navbar-burger
+				span
+				span
+				span
+
+template(name="layout")
+	+header
+	section.section
+		.container
+			+Template.dynamic template=main
+	//- +footer
+
+template(name="home")
+	h1.title Challenges
+		a.button.is-pulled-right#add-challenge + Identify New Challenge
+	each challenges
+		+challengeTile
+		
+template(name="challengeTile")
+	.card
+		//- .card-header
+			.card-header-title {{name}}
+		.card-content
+			p.card-title.title {{name}}
+			p
+				if description
+					| {{description}}
+				else
+					a.button.add-description + Add Description
+		footer.card-footer
+			a.card-footer-item(href="/challenges/{{_id}}") Read More
+			a.card-footer-item Vote
+			a.card-footer-item Solve
+
+
+template(name="challengeDetail")
+	with challenge
+		h1.title {{name}}
+		p {{description}}
