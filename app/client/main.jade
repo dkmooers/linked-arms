@@ -40,8 +40,12 @@ template(name="challengeTile")
 					a.button.add-description + Add Description
 		footer.card-footer
 			a.card-footer-item(href="/challenges/{{_id}}") Read More
-			a.card-footer-item Vote
-			a.card-footer-item Solve
+			a.card-footer-item
+				i.fa.fa-thumbs-o-up
+				| Vote
+			a.card-footer-item
+				i.fa.fa-lightbulb-o
+				| Solve
 
 
 template(name="challengeDetail")
